@@ -408,7 +408,7 @@
       </div>
       <div style="color:#757687;margin-bottom:1.5em;font-size:1.09em;">Have a question, feedback, or just want to say hello? I'd love to hear from you! Your communication matters to me!</div>
 
-      <!-- ✅ Formspree-enabled form (replace action URL) -->
+      <!-- ✅ Formspree enabled form  -->
       <form id="contactForm" action="https://formspree.io/f/mgvnqawo
     
       " method="POST" style="margin-top:1em;">
@@ -422,18 +422,17 @@
         <textarea name="message" placeholder="Message" required
                   style="width:100%;margin-bottom:0.85em;padding:0.7em 1em;border-radius:10px;border:1px solid #e3e2ea;font-size:1em;min-height:100px;"></textarea>
 
-        <!-- Optional subject line you’ll see in your email -->
+        <!-- Optional email -->
         <input type="hidden" name="_subject" value="New message from your portfolio site">
 
         <button type="submit" style="background:#19191c; color:white; font-size:1.13em; border-radius:11px; padding:0.8em 2em; font-weight:500; border:none; cursor:pointer; box-shadow:0 2px 10px #eceaec;margin-top:0.7em;">Send a Message</button>
 
-        <!-- Status message (set by JS below) -->
+        
         <p id="formStatus" style="margin-top:0.8em;color:#4a4a4a;"></p>
       </form>
     </div>
   </section>
 
-  <!-- ✅ Tiny JS to submit via fetch + show success/error without leaving the page -->
   <script>
     (function () {
       const form = document.getElementById('contactForm');
@@ -453,7 +452,7 @@
           try {
             const formData = new FormData(form);
 
-            // If honeypot has value, it’s probably a bot; do nothing.
+            
             if (formData.get('_gotcha')) return;
 
             const res = await fetch(form.action, {
