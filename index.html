@@ -14,6 +14,7 @@
       color: #222;
     }
 
+
     .project-card {
       background: #fff;
       border-radius: 20px;
@@ -43,6 +44,7 @@
       background: #eee;
     }
     .project-img:hover { box-shadow: 0 4px 24px #d0b3f6; transform: scale(1.018); }
+
 
     /* Navbar */
     .navbar {
@@ -76,6 +78,7 @@
       box-shadow: 0 2px 7px rgba(172,62,248,0.13); transition: background 0.2s;
     }
     .contact-btn:hover { background: #3218c7; color: #ffcb46; }
+
 
     /* Hero/Main */
     .main-section {
@@ -121,6 +124,7 @@
 </head>
 <body>
 
+
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-logo">
@@ -136,6 +140,7 @@
       <button class="contact-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact Me</button>
     </div>
   </nav>
+
 
   <!-- Home Section -->
   <section id="home">
@@ -178,6 +183,7 @@
     </div>
   </section>
 
+
   <!-- Profile Section -->
   <section id="profile">
     <div style="max-width:1080px;margin:2.5em auto 1em auto;padding:2em;background:#fff;border-radius:24px;box-shadow:0 2px 16px 2px #e6e3f6;">
@@ -201,6 +207,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- Education Section -->
   <section id="education">
@@ -248,6 +255,7 @@
     </div>
   </section>
 
+
   <!-- Projects Section -->
   <section id="projects">
     <div style="max-width:1080px;margin:2.5em auto 1em auto;padding:2em;background:#fff;border-radius:24px;box-shadow:0 2px 16px 2px #e6e3f6;">
@@ -260,6 +268,7 @@
           <div style="color:#9a92ad;font-size:1.02em;">Showcasing full-stack development expertise through innovative solutions</div>
         </div>
       </div>
+
 
       <div class="project-card">
         <div class="project-card-header">
@@ -279,6 +288,7 @@
         </a>
       </div>  
 
+
       <div class="project-card">
         <div class="project-card-header">
           <span class="project-title">KhanaBuddy – AI-Powered Food Ordering</span>
@@ -297,6 +307,7 @@
         </a>
       </div>
 
+
       <div class="project-card">
         <div class="project-card-header">
           <span class="project-title">Textile Design Search System</span>
@@ -314,6 +325,7 @@
           <img src="ride_mate.jpg" class="project-img" alt="ride_mate" />
         </a>
       </div>
+
 
       <div class="project-card">
         <div class="project-card-header">
@@ -334,6 +346,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- Skills Section -->
   <section id="skills">
@@ -367,6 +380,7 @@
     </div>
   </section>
 
+
   <!-- Achievements / Certifications -->
   <section id="certifications">
     <div style="background:#fff; margin:2em auto 3em auto; box-shadow:0 2px 16px 0px #e8e9ec; border-radius: 1.5em; max-width: 1100px; padding:2.2em 2.3em 1.3em 2.3em;">
@@ -399,6 +413,7 @@
     </div>
   </section>
 
+
   <!-- Contact Section -->
   <section id="contact">
     <div style="background:#fff; margin:3em auto 4.5em auto; box-shadow:0 2px 16px 0px #e8e9ec; border-radius: 1.5em; max-width: 730px; padding:2.2em 2.1em 1.8em 2.1em;">
@@ -408,12 +423,14 @@
       </div>
       <div style="color:#757687;margin-bottom:1.5em;font-size:1.09em;">Have a question, feedback, or just want to say hello? I'd love to hear from you! Your communication matters to me!</div>
 
+
       <!-- ✅ Formspree enabled form  -->
       <form id="contactForm" action="https://formspree.io/f/mgvnqawo
     
       " method="POST" style="margin-top:1em;">
         <!-- Honeypot spam trap -->
         <input type="text" name="_gotcha" style="display:none">
+
 
         <input type="text" name="name" placeholder="Full Name" required
                style="width:100%;margin-bottom:0.85em;padding:0.7em 1em;border-radius:10px;border:1px solid #e3e2ea;font-size:1em;" />
@@ -422,10 +439,13 @@
         <textarea name="message" placeholder="Message" required
                   style="width:100%;margin-bottom:0.85em;padding:0.7em 1em;border-radius:10px;border:1px solid #e3e2ea;font-size:1em;min-height:100px;"></textarea>
 
+
         <!-- Optional email -->
         <input type="hidden" name="_subject" value="New message from your portfolio site">
 
+
         <button type="submit" style="background:#19191c; color:white; font-size:1.13em; border-radius:11px; padding:0.8em 2em; font-weight:500; border:none; cursor:pointer; box-shadow:0 2px 10px #eceaec;margin-top:0.7em;">Send a Message</button>
+
 
         
         <p id="formStatus" style="margin-top:0.8em;color:#4a4a4a;"></p>
@@ -433,10 +453,12 @@
     </div>
   </section>
 
+
   <script>
     (function () {
       const form = document.getElementById('contactForm');
       const statusEl = document.getElementById('formStatus');
+
 
       function setStatus(msg, ok = true) {
         if (!statusEl) return;
@@ -444,22 +466,27 @@
         statusEl.style.color = ok ? '#1b7f3b' : '#b00020';
       }
 
+
       if (form) {
         form.addEventListener('submit', async function (e) {
           e.preventDefault();
           setStatus('Sending...');
 
+
           try {
             const formData = new FormData(form);
 
+
             
             if (formData.get('_gotcha')) return;
+
 
             const res = await fetch(form.action, {
               method: form.method,
               headers: { 'Accept': 'application/json' },
               body: formData
             });
+
 
             if (res.ok) {
               setStatus('✅ Message sent! I’ll get back to you soon.');
@@ -478,5 +505,10 @@
     })();
   </script>
 
+
 </body>
 </html>
+
+
+
+
