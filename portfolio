@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Sneh Patel | Portfolio</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8fbff; margin:0; }
+    .navbar { background: #293a4e; color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 1em 2em; }
+    .navbar a { color: #fff; margin-left: 1em; text-decoration: none; font-weight: bold;}
+    .hero { display:flex; flex-wrap: wrap; align-items:center; padding: 2em; background: linear-gradient(90deg,#362f60 70%,#e8ecf6 100%);}
+    .hero-img { width:140px; height:140px; border-radius: 50%; background:#fff; object-fit:cover; margin-right:2em;}
+    .hero-content { color:#fff; }
+    .hero-content h1 { margin:0; font-size:2.2em; }
+    .section { padding:2em; max-width:900px; margin:auto; }
+    .section-title { font-size:1.5em; color:#362f60; margin-bottom:0.5em;}
+    .cards { display:flex; flex-wrap:wrap; gap:1.5em; }
+    .card { background:#fff; box-shadow:0 2px 8px rgba(44,36,89,.1);padding:1.5em;border-radius:10px;width:calc(50% - 2em);}
+    .card h2 { margin-top:0;font-size:1.15em;}
+    ul {padding-left:1em;}
+    .skills { background:#e8ecf6; border-radius:8px; padding:1em; margin-top:1em;}
+    .contact { padding:1.5em; background:#d6f1ed; border-radius:8px;}
+    @media(max-width:700px){
+      .hero{flex-direction:column;}
+      .cards{flex-direction:column;}
+      .card{width:100%;}
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div>Sneh Patel</div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+  <section class="hero">
+    <img src="your-profile-image.jpg" alt="Profile photo" class="hero-img" />
+    <div class="hero-content">
+      <h1>Sneh Patel</h1>
+      <p>AI-driven Full Stack Developer & Innovator | B.Tech @ VIT</p>
+      <p>Building intuitive, scalable applications combining AI, security, and modern UX.</p>
+      <p>
+        <a href="https://github.com/sneh2401">GitHub</a> |
+        <a href="https://linkedin.com/in/yourlinkedin">LinkedIn</a> |
+        <a href="https://leetcode.com/yourleetcode">LeetCode</a>
+      </p>
+    </div>
+  </section>
+  <section class="section" id="about">
+    <div class="section-title">About</div>
+    <p>
+      Computer Science undergraduate at Vellore Institute Of Technology, passionate about building full-stack web solutions and AI interfaces. Experienced in React.js, Node.js, competitive programming, and image-based systems.
+    </p>
+    <ul>
+      <li><b>B.Tech</b>, CSE (Information Security), VIT (2022–present)</li>
+      <li><b>Higher Secondary</b>: Manav Kendra Gyan Mandir School (2020–2022)</li>
+      <li><b>Secondary</b>: Manav School (until 2020)</li>
+      <li>Microsoft AI Fundamentals certified • Hackathon participant • Volunteer at Youth Red Cross</li>
+    </ul>
+  </section>
+  <section class="section" id="projects">
+    <div class="section-title">Projects</div>
+    <div class="cards">
+      <div class="card">
+        <h2>KhanaBuddy (React.js/Next.js)</h2>
+        <ul>
+          <li>AI-powered food ordering web app with voice commands and conversational UI.</li>
+          <li>Advanced natural language parsing for hands-free order management.</li>
+          <li>Speech API integration.</li>
+          <li><a href="https://github.com/sneh2401/khanabuddy">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>RideMate Taxi-Sharing (MERN)</h2>
+        <ul>
+          <li>Real-time ride sharing app with Google Maps, Socket.io chat, JWT authentication.</li>
+          <li>Secure image uploads, session token management, deployed on Vercel & Render.</li>
+          <li><a href="https://github.com/sneh2401/RideMate">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Textile Design Search System (Flask, OpenCV)</h2>
+        <ul>
+          <li>Image similarity engine for design/fashion with automated image indexing.</li>
+          <li>Drag-and-drop uploads, fast feature extraction, scalable retrieval.</li>
+          <li><a href="https://github.com/sneh2401/Textile_design_search">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Banana MarketPrice (React.js, Next.js)</h2>
+        <ul>
+          <li>Real-time produce marketplace for farmers & wholesalers.</li>
+          <li>Responsive dashboards, dynamic state management, scalable listings.</li>
+          <li><a href="https://github.com/sneh2401/Banana_Marketplace">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="skills">
+    <div class="section-title">Skills & Technologies</div>
+    <div class="skills">
+      <b>Languages:</b> JavaScript, Python, Java, C++, SQL <br/>
+      <b>Frameworks:</b> React.js, Next.js, Node.js, Express, Flask <br/>
+      <b>Tools:</b> Git, VS Code, MySQL, IntelliJ <br/>
+      <b>Soft Skills:</b> Leadership, Communication, Teamwork, Problem-solving
+    </div>
+  </section>
+  <section class="section" id="contact">
+    <div class="section-title">Contact</div>
+    <div class="contact">
+      <p>Email: <a href="mailto:snehpatel121@gmail.com">snehpatel121@gmail.com</a></p>
+      <p>Phone: +91-9510658074</p>
+      <p>
+        <a href="https://linkedin.com/in/yourlinkedin">LinkedIn</a> |
+        <a href="https://github.com/sneh2401">GitHub</a> |
+        <a href="https://leetcode.com/yourleetcode">LeetCode</a>
+      </p>
+      <form>
+        <input type="text" placeholder="Your Name" required /><br/><br/>
+        <input type="email" placeholder="Your Email" required /><br/><br/>
+        <textarea placeholder="Your Message" required></textarea><br/><br/>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>

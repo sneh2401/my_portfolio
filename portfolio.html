@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Sneh Patel | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(120deg, #f7f6fd 65%, #e2f6fb 100%);
+      color: #222;
+    }
+
+    .project-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 14px 0 #edeaf3;
+  margin: 2em auto;
+  padding: 2em 2em 1.4em 2em;
+  max-width: 800px;
+  width: 100%;
+}
+.project-card-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+.project-title {
+  font-size: 1.13em; font-weight: 700; color: #251251;
+}
+.project-links a {
+  color: #751ad1; margin-left: 2em; text-decoration: none; font-weight: 600;
+}
+.project-links a:hover { text-decoration: underline; }
+.project-meta {
+  font-style: italic; color: #867a95; margin: 0.7em 0 0.8em 0;
+}
+.project-desc {
+  margin: 1em 0 1.1em 1.2em; color: #53505e;
+}
+.project-img {
+  width: 100%;
+  aspect-ratio: 3 / 1;       /* Width is 3x the height */
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 1px 12px #e3e0f6;
+  margin-top: 1.1em;
+  cursor: pointer;
+  transition: box-shadow 0.18s, transform 0.18s;
+  border: none;
+  display: block;
+  background: #eee;
+}
+
+.project-img:hover {
+  box-shadow: 0 4px 24px #d0b3f6;
+  transform: scale(1.018);
+}
+
+    /* Navbar */
+    .navbar {
+      max-width:1200px;
+      margin:26px auto 0 auto;
+      background:#fff;
+      border-radius:1.5em;
+      box-shadow: 0 4px 24px 0px rgba(60,60,80,0.08);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 0.7em 2.5em;
+      font-family:'Inter',Arial,sans-serif;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+      font-size: 1.16em;
+      font-weight: 700;
+      color: #322a5d;
+    }
+    .logo-circle {
+      background: #8c37f8;
+      color: #fff;
+      border-radius: 50%;
+      width: 2.4em;
+      height: 2.4em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.35em;
+    }
+    .navbar-links {
+      display: flex;
+      gap: 2em;
+      align-items: center;
+    }
+    .navbar-links a {
+      color: #322a5d;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.18em 0.7em;
+      border-radius: 8px;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .navbar-links a:hover, .contact-btn:hover {
+      background: #f3e7fd;
+    }
+    .contact-btn {
+      background: #161922;
+      color: #fff;
+      border: none;
+      padding: 0.7em 1.25em;
+      border-radius: 13px;
+      font-weight: 600;
+      font-size: 1em;
+      cursor: pointer;
+      margin-left: 0.5em;
+      box-shadow: 0 2px 7px rgba(172,62,248,0.13);
+      transition: background 0.2s;
+    }
+    .contact-btn:hover {
+      background: #3218c7;
+      color: #ffcb46;
+    }
+    /* Hero/Main */
+    .main-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1080px;
+      margin: 2.5em auto 1.5em auto;
+      padding: 2.5em 2em 1.5em 2em;
+      background: rgba(255,255,255,.97);
+      border-radius: 2em;
+      box-shadow: 0 2px 14px 2px #e6e3f6;
+    }
+    .hero-left {
+      flex: 1 1 350px;
+      min-width: 320px;
+      padding-right: 2em;
+    }
+    .hero-heading {
+      font-size: 2.4em;
+      font-weight: 700;
+      line-height: 1.12;
+      margin-bottom: 0.36em;
+      color: #18181b;
+    }
+    .hero-summary {
+      font-size: 1.09em;
+      max-width: 34em;
+      margin-bottom: 1.5em;
+      color: #424269;
+      line-height: 1.5;
+    }
+    .hero-action { margin-bottom: 2em; }
+    .say-btn {
+      background: #8c37f8;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 0.7em 1.45em;
+      font-size: 1.07em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px 1px #d7ccfb;
+      transition: background 0.2s;
+    }
+    .say-btn:hover { background: #322a5d; }
+    .hero-stats {
+      display: flex;
+      gap: 1.1em;
+      margin-top: 1.7em;
+    }
+    .stat-card {
+      flex: 1 1 8em;
+      padding: 1.3em 1.6em;
+      background: #f3e7fd;
+      color: #322a5d;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      box-shadow: 0 1px 8px rgba(44,36,89,.07);
+    }
+    .stat-title { font-size: 1.5em; font-weight: bold; }
+    .stat-desc { font-size: 1em; font-weight: 400; color: #624784; margin-top: 0.1em; }
+    .hero-right {
+      flex: 1 1 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 260px;
+    }
+    .profile-card {
+      background: #fff;
+      width: 21em;
+      max-width: 100vw;
+      border-radius: 25px;
+      box-shadow: 0 4px 18px 3px #dbeafb;
+      padding: 2em 1.6em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .profile-img {
+      width: 180px;
+      height: 220px;
+      border-radius: 17px;
+      object-fit: cover;
+      box-shadow: 0 3px 10px 2px #e3e3f7;
+    }
+    .chip {
+      display:inline-block;
+      padding:0.43em 1em;
+      margin: 0 0.4em 0.45em 0;
+      background:#f3f3f6;
+      color:#323248;
+      border-radius: 1.1em;
+      font-size:1em;
+      font-weight:500;
+      border:1px solid #efecf5;
+    }
+    @media(max-width:900px){ .main-section{flex-direction:column;gap:3em;} .hero-left{padding:0;} }
+    @media(max-width:600px){
+      .main-section{padding:1.1em;}
+      .profile-card{width:95vw;}
+      .hero-heading{font-size:1.28em;}
+      .stat-card{padding:0.8em 0.8em;}
+      .navbar{padding:0.65em 1em;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <span class="logo-circle">&lt;/&gt;</span>
+      <span>Sneh Patel</span>
+    </div>
+    <div class="navbar-links">
+      <a href="#home">Home</a>
+      <a href="#profile">Profile</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <button class="contact-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact Me</button>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+<section id="home">
+  <div class="main-section">
+    <div class="hero-left">
+      <div class="hero-heading"><br>Sneh Patel</div>
+      <div class="hero-summary">
+        I'm a Computer Science and Engineering Final year student specializing in Information Security at VIT.<br>
+        Aspiring programmer and Software Developer.
+        <br>
+        <a href="https://github.com/sneh2401" target="_blank" style="color:#8c37f8;text-decoration:underline;font-weight:bold;">GitHub</a> &nbsp;•&nbsp;
+        <a href="https://linkedin.com/in/snehpatel9" target="_blank" style="color:#8c37f8;text-decoration:underline;font-weight:bold;">LinkedIn</a> &nbsp;•&nbsp; 
+        <a href="https://leetcode.com/u/Snehpatel2401/" target="_blank" style="color:#8c37f8;text-decoration:underline;font-weight:bold;">LeetCode</a>
+      </div>
+      <div class="hero-action">
+        <a href="resume.pdf" download style="display:inline-block;background:#161922;color:#fff;border:none;border-radius:10px;padding:0.8em 2em;font-size:1.07em;font-weight:600;box-shadow:0 2px 8px 1px #d7ccfb;transition:background 0.2s;text-decoration:none;">
+          &#8681; Download CV
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-title">Available</div>
+          <div class="stat-desc">For Work</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">4</div>
+          <div class="stat-desc">Projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title">Strong Skillset</div>
+          <div class="stat-desc"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="profile-card">
+        <img src="my_photo.jpg" alt="Profile photo of Sneh Patel" class="profile-img" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Profile Section -->
+  <section id="profile">
+    <div style="max-width:1080px;margin:2.5em auto 1em auto;padding:2em;background:#fff;border-radius:24px;box-shadow:0 2px 16px 2px #e6e3f6;">
+      <div style="display:flex;align-items:center;margin-bottom:1.2em;">
+        <div style="width:54px;height:54px;border-radius:14px;background:#faf7ff;display:flex;align-items:center;justify-content:center;font-size:1.9em;color:#8c37f8;">
+          <span>👤</span>
+        </div>
+        <div style="margin-left:1em;">
+          <div style="font-size:1.5em;font-weight:700;">Professional Profile</div>
+          <div style="color:#9a92ad;font-size:1.02em;">About Me</div>
+        </div>
+      </div>
+      <div style="font-size:1.08em;color:#55565f;line-height:1.7;">
+         I’m a final-year Computer Science and Engineering student at VIT Vellore, specializing in Information Security. I’m passionate about building software that’s both functional and impactful, with a focus on solving real-world problems through clean and efficient design.
+         <br>
+
+I primarily work with C++, Python, and JavaScript, and have built several full-stack applications like KhanaBuddy (AI-powered voice-based food ordering) and Textile Design Search System (image similarity search engine). These projects helped me understand end-to-end development from logic to deployment.
+<br>
+
+I’m currently deepening my expertise in RESTful APIs, and MySQL while continuing to strengthen my DSA skills with over 450+ LeetCode problems.
+<br>
+
+I enjoy tackling new challenges, collaborating with driven teams, and constantly learning. Beyond coding, I enjoy exploring new destinations and experiencing a variety of foods over India.
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+  <div style="max-width:1080px; margin:2.5em auto 1em auto; padding:2em; background:#fff; border-radius:24px; box-shadow:0 2px 16px 2px #e6e3f6;">
+    <div style="display:flex;align-items:center;margin-bottom:1.5em;">
+      <div style="width:54px;height:54px;border-radius:14px;background:#faf7ff;display:flex;align-items:center;justify-content:center;font-size:1.87em;color:#8c37f8;">
+        <span>🎓</span>
+      </div>
+      <div style="margin-left:1em;">
+        <div style="font-size:1.5em;font-weight:700;">Education</div>
+      </div>
+    </div>
+    <div>
+      <!-- Entry 1 -->
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.2em;">
+        <div>
+          <b>Vellore Institute of Technology</b><br>
+          B.Tech Computer Science & Engineering (Information Security)
+        </div>
+        <div style="text-align:right;min-width:170px;">
+          <div style="color:#8765e3;font-weight:600;">2022 – Present</div>
+          <div style="color:#444;margin-top:0.25em;">CGPA: 8.89</div>
+        </div>
+      </div>
+      <!-- Entry 2 -->
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.1em;">
+        <div>
+          <b>Manav Kendra Gyan Mandir School</b><br>
+          Higher Secondary Education
+        </div>
+        <div style="text-align:right;min-width:170px;">
+          <div style="color:#8765e3;font-weight:600;">2020 – 2022</div>
+          <div style="color:#444;margin-top:0.25em;">Score: 93%</div>
+        </div>
+      </div>
+      <!-- Entry 3 -->
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div>
+          <b>Manav School</b><br>
+          Secondary Education
+        </div>
+        <div style="text-align:right;min-width:170px;">
+          <div style="color:#8765e3;font-weight:600;">Until 2020</div>
+          <div style="color:#444;margin-top:0.25em;">Score: 90.2%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div style="max-width:1080px;margin:2.5em auto 1em auto;padding:2em;background:#fff;border-radius:24px;box-shadow:0 2px 16px 2px #e6e3f6;">
+      <div style="display:flex;align-items:center;margin-bottom:1.2em;">
+        <div style="width:54px;height:54px;border-radius:14px;background:#faf7ff;display:flex;align-items:center;justify-content:center;font-size:1.9em;color:#8c37f8;">
+          <span>📂</span>
+        </div>
+        <div style="margin-left:1em;">
+          <div style="font-size:1.5em;font-weight:700;">Featured Projects</div>
+          <div style="color:#9a92ad;font-size:1.02em;">Showcasing full-stack development expertise through innovative solutions</div>
+        </div>
+      </div>
+      <!-- Project Cards -->
+
+      
+  <div class="project-card">
+  <div class="project-card-header">
+    <span class="project-title">Textile Design Search System</span>
+    <div class="project-links">
+      <a href="https://github.com/sneh2401/Textile_design_search" target="_blank">GitHub</a>
+      <a href="https://yourlivedemo.com" target="_blank">Live Demo</a>
+    </div>
+  </div>
+  <div class="project-meta">Python, Flask, OpenCV, JavaScript</div>
+  <ul class="project-desc">
+    <li>Web-based image similarity search engine for design/fashion, automating image indexing and retrieval.</li>
+          <li>Drag-and-drop uploads, adjustable search criteria, NumPy-based feature algorithms for fast processing.</li>
+  </ul>
+  <a href="https://yourlivedemo.com" target="_blank">
+    <img src="textile.jpg" class="project-img" alt="RailCare Demo" />
+  </a>
+</div>  
+
+
+     <div class="project-card">
+  <div class="project-card-header">
+    <span class="project-title">KhanaBuddy – AI-Powered Food Ordering</span>
+    <div class="project-links">
+      <a href="https://github.com/yourusername/railcare" target="_blank">GitHub</a>
+      <a href="https://yourlivedemo.com" target="_blank">Live Demo</a>
+    </div>
+  </div>
+  <div class="project-meta">React.js, Next.js, WebSpeechAPI, Node.js</div>
+  <ul class="project-desc">
+    <li>Voice-enabled web app for natural-language food ordering with hands-free commands, NLP, and real-time UI.</li>
+          <li>Advanced speech command parsing, persistent storage, real-time calculations, conversational AI experience.</li>
+  </ul>
+  <a href="https://yourlivedemo.com" target="_blank">
+    <img src="Khana.jpg" class="project-img" alt="RailCare Demo" />
+  </a>
+</div>
+
+
+  
+
+
+
+<div class="project-card">
+  <div class="project-card-header">
+    <span class="project-title">Textile Design Search System</span>
+    <div class="project-links">
+      <a href="https://github.com/sneh2401/RideMate" target="_blank">GitHub</a>
+      <a href="https://yourlivedemo.com" target="_blank">Live Demo</a>
+    </div>
+  </div>
+  <div class="project-meta">React.js, Redux, Node.js, Google Maps API, MongoDB</div>
+  <ul class="project-desc">
+    <li>Live cloud taxi-sharing platform, ride matching, real-time chat, JWT-based authentication, session management.</li>
+          <li>Geo-tracking, Google Maps, secure file uploads; deployed across Vercel and Render cloud.</li>
+  </ul>
+  <a href="https://yourlivedemo.com" target="_blank">
+    <img src="ride_mate.jpg" class="project-img" alt="RailCare Demo" />
+  </a>
+</div>
+
+
+<div class="project-card">
+  <div class="project-card-header">
+    <span class="project-title">Banana_Marketplace</span>
+    <div class="project-links">
+      <a href="https://github.com/sneh2401/RideMate" target="_blank">GitHub</a>
+      <a href="https://yourlivedemo.com" target="_blank">Live Demo</a>
+    </div>
+  </div>
+  <div class="project-meta">React.js, Next.js, REST APIs</div>
+  <ul class="project-desc">
+    <li>Realtime produce marketplace for farmers & wholesalers, with fully responsive dashboards and smart state management.</li>
+          <li>Powerful UI with live price updates, data-driven workflows, and marketplace analytics.</li>
+  </ul>
+  <a href="https://yourlivedemo.com" target="_blank">
+    <img src="bana.jpg" class="project-img" alt="RailCare Demo" />
+  </a>
+</div>
+        
+
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div style="background:#fff; margin:2em auto; box-shadow:0 2px 16px 0px #e8e9ec; border-radius: 1.6em; max-width: 1100px; padding:2.2em 2.3em 1.3em 2.3em;">
+      <div style="display:flex; align-items:center; margin-bottom:1.7em;">
+        <div style="background:#f2f4f5; width:50px; height:50px; border-radius:13px; display:flex; align-items:center; justify-content:center; font-size:1.7em; color:#4d4a4e; margin-right:0.85em;">&#128295;</div>
+        <div>
+          <div style="font-size:2em;font-weight:700;">Professional Skills</div>
+        </div>
+      </div>
+      <div style="margin:2em 0 1.3em 0;">
+        <div style="font-size:1.11em; font-weight:500; margin-bottom:0.8em;">Programming Languages</div>
+        <div style="margin-bottom:1.1em;">
+          <span class="chip">C++</span> <span class="chip">Java</span> <span class="chip">Python</span> <span class="chip">SQL</span> <span class="chip">HTML</span> <span class="chip">CSS</span>
+        </div>
+        <div style="font-size:1.11em; font-weight:500; margin-bottom:0.8em;">Frameworks & Technologies</div>
+        <div style="margin-bottom:1.1em;">
+          <span class="chip">React.js</span> <span class="chip">Node.js</span> <span class="chip">Flask</span> <span class="chip">REST APIs</span> <span class="chip">JWT Authentication</span>
+        </div>
+        <div style="font-size:1.11em; font-weight:500; margin-bottom:0.8em;">Tools & Platforms</div>
+        <div style="margin-bottom:1.1em;">
+          <span class="chip">VS Code</span> <span class="chip">Git</span> <span class="chip">GitHub</span><span class="chip">IntelliJ IDEA</span>
+        </div>
+        <div style="font-size:1.11em; font-weight:500; margin-bottom:0.8em;">Core Competencies</div>
+        <div style="margin-bottom:1.1em;">
+          <span class="chip">Data Structures & Algorithms</span> <span class="chip">Full-Stack Web Development</span> <span class="chip">API Development</span> <span class="chip">System Integration</span> 
+        </div>
+        <div style="font-size:1.11em; font-weight:500; margin-bottom:0.8em;">Leadership & Professional Skills</div>
+        <div style="margin-bottom:0.6em;">
+          <span class="chip">Project Management</span> <span class="chip">Team Leadership</span> <span class="chip">Communication</span> <span class="chip">Problem-Solving</span> <span class="chip">Analytical Thinking</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements / Certifications -->
+  <section id="certifications">
+    <div style="background:#fff; margin:2em auto 3em auto; box-shadow:0 2px 16px 0px #e8e9ec; border-radius: 1.5em; max-width: 1100px; padding:2.2em 2.3em 1.3em 2.3em;">
+      <div style="display:flex; align-items:center; margin-bottom:1.7em;">
+        <div style="background:#f2f4f5; width:50px; height:50px; border-radius:13px; display:flex; align-items:center; justify-content:center; font-size:1.6em; color:#403a58; margin-right:0.85em;">&#128221;</div>
+        <div>
+          <div style="font-size:2em;font-weight:700;">Achievements / Certifications</div>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2em;">
+        <div style="background:#fafafa;border-radius:14px;padding:1.25em 1.5em 1.5em 1.5em;">
+          <div style="font-weight:600;font-size:1.12em;">Microsoft Azure AI Fundamentals</div>
+          <div style="color:#7c7e8f; margin-bottom:0.7em;">Microsoft • Issued August 2024
+            </div>
+          <a href="#" style="display:inline-block;margin-top:0.6em;background:#e9e5f6; color:#3e257b; padding:0.4em 1.3em; border-radius:1.1em; text-decoration:none;font-weight:600;">↗ Show Certificate</a>
+        </div>
+        <div style="background:#fafafa;border-radius:14px;padding:1.25em 1.5em 1.5em 1.5em;">
+          <div style="font-weight:600;font-size:1.12em;">Solved over 450 algorithmic problems on LeetCode, building a strong foundation in data structures and algorithms.</div>
+          <div style="color:#7c7e8f; margin-bottom:0.7em;">LeetCode</div>
+          <a href="#" style="display:inline-block;margin-top:0.6em;background:#e9e5f6; color:#3e257b; padding:0.4em 1.3em; border-radius:1.1em; text-decoration:none;font-weight:600;">↗ Show Certificate</a>
+        </div>
+        <div style="background:#fafafa;border-radius:14px;padding:1.25em 1.5em 1.5em 1.5em;">
+          <div style="font-weight:600;font-size:1.12em;">Technica Hackathon Participant:</div>
+          <div style="color:#7c7e8f; margin-bottom:0.7em;">participation certificate in a 48-hour PAN India hackathon</div>
+          <a href="#" style="display:inline-block;margin-top:0.6em;background:#e9e5f6; color:#3e257b; padding:0.4em 1.3em; border-radius:1.1em; text-decoration:none;font-weight:600;">↗ Show Certificate</a>
+        </div>
+        <div style="background:#fafafa;border-radius:14px;padding:1.25em 1.5em 1.5em 1.5em;">
+          <div style="font-weight:600;font-size:1.12em;">Volunteer Youth Red Cross - VIT Vellore</div>
+          <div style="color:#7c7e8f; margin-bottom:0.7em;">Organized blood donation camps and events promoting awareness</div>
+          <a href="https://leetcode.com/u/Snehpatel2401/" target="_blank" style="display:inline-block;margin-top:0.6em;background:#e9e5f6; color:#3e257b; padding:0.4em 1.3em; border-radius:1.1em; text-decoration:none;font-weight:600;">↗ LeetCode Profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div style="background:#fff; margin:3em auto 4.5em auto; box-shadow:0 2px 16px 0px #e8e9ec; border-radius: 1.5em; max-width: 730px; padding:2.2em 2.1em 1.8em 2.1em;">
+      <div style="display:flex; align-items:center; margin-bottom:1.3em;">
+        <div style="background:#f2f4f5; width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4em; color:#403a58; margin-right:0.8em;">&#9993;</div>
+        <div style="font-size:1.42em;font-weight:700;">Get in Touch with Me!</div>
+      </div>
+      <div style="color:#757687;margin-bottom:1.5em;font-size:1.09em;">Have a question, feedback, or just want to say hello? I'd love to hear from you! Your communication matters to me!</div>
+      <div style="margin-bottom:2em;font-size:1.04em;">
+        <div style="margin-bottom:0.32em;"><a href="tel:+919510658074" style="text-decoration:none;color:#7f56d9;font-weight:500;">+91-9510658074</a> • <a href="mailto:snehpatel121@gmail.com" style="text-decoration:none;color:#7f56d9;font-weight:500;margin-left:0.5em;">snehpatel121@gmail.com</a></div>
+        <div style="margin-bottom:0.32em;">
+          <a href="https://www.linkedin.com/in/snehpatel9/" target="_blank" style="text-decoration:none;color:#0077b5;font-weight:500;">LinkedIn</a> •
+          <a href="https://github.com/sneh2401" target="_blank" style="text-decoration:none;color:#171515;font-weight:500;margin-left:0.5em;">GitHub</a> •
+          <a href="https://leetcode.com/u/Snehpatel2401/" target="_blank" style="text-decoration:none;color:#189b35;font-weight:500;margin-left:0.5em;">LeetCode</a>
+        </div>
+      </div>
+      <form style="margin-top:1em;">
+        <input type="text" placeholder="Full Name" required style="width:100%;margin-bottom:0.85em;padding:0.7em 1em;border-radius:10px;border:1px solid #e3e2ea;font-size:1em;" />
+        <input type="email" placeholder="Email" required style="width:100%;margin-bottom:0.85em;padding:0.7em 1em;border-radius:10px;border:1px solid #e3e2ea;font-size:1em;" />
+        <textarea placeholder="Message" required style="width:100%;margin-bottom:0.85em;padding:0.7em 1em;border-radius:10px;border:1px solid #e3e2ea;font-size:1em;min-height:100px;"></textarea>
+        <button type="submit" style="background:#19191c; color:white; font-size:1.13em; border-radius:11px; padding:0.8em 2em; font-weight:500; border:none; cursor:pointer; box-shadow:0 2px 10px #eceaec;margin-top:0.7em;">Send a Message</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>
