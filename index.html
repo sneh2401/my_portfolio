@@ -15,6 +15,15 @@
     }
 
     /* Navbar */
+    .logo-img {
+  width: 2.6em;
+  height: 2.6em;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #8c37f8;
+  box-shadow: 0 2px 6px rgba(140, 55, 248, 0.25);
+}
+
     .navbar {
       max-width: 1200px;
       margin: 26px auto 0 auto;
@@ -320,22 +329,22 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-logo">
-      <span class="logo-circle">&lt;/&gt;</span>
-      <span>Sneh Patel</span>
-    </div>
-    <div class="navbar-links">
-      <a href="#home">Home</a>
-      <a href="#profile">Profile</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <button class="contact-btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
-        Contact Me
-      </button>
-    </div>
-  </nav>
+<nav class="navbar">
+  <div class="navbar-logo">
+    <!-- Replace logo circle with your photo -->
+    <img src="my_photo.jpg" alt="Sneh Patel" class="logo-img" />
+    <span>Sneh Patel</span>
+  </div>
+  <div class="navbar-links">
+    <a href="#home">Home</a>
+    <a href="#profile">Profile</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <button class="contact-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact Me</button>
+  </div>
+</nav>
+
 
   <!-- Home Section -->
   <section id="home">
