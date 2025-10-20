@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Sneh Patel | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     html { scroll-behavior: smooth; }
     body {
@@ -14,22 +14,218 @@
       color: #222;
     }
 
+    /* Navbar */
+    .navbar {
+      max-width: 1200px;
+      margin: 26px auto 0 auto;
+      background: #fff;
+      border-radius: 1.5em;
+      box-shadow: 0 4px 24px 0px rgba(60, 60, 80, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7em 2.5em;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+      font-size: 1.16em;
+      font-weight: 700;
+      color: #322a5d;
+    }
+    .logo-circle {
+      background: #8c37f8;
+      color: #fff;
+      border-radius: 50%;
+      width: 2.4em;
+      height: 2.4em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.35em;
+    }
+    .navbar-links {
+      display: flex;
+      gap: 2em;
+      align-items: center;
+    }
+    .navbar-links a {
+      color: #322a5d;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.18em 0.7em;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .navbar-links a:hover,
+    .contact-btn:hover {
+      background: #f3e7fd;
+    }
+    .contact-btn {
+      background: #161922;
+      color: #fff;
+      border: none;
+      padding: 0.7em 1.25em;
+      border-radius: 13px;
+      font-weight: 600;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 2px 7px rgba(172, 62, 248, 0.13);
+      transition: background 0.2s;
+    }
+    .contact-btn:hover {
+      background: #3218c7;
+      color: #ffcb46;
+    }
 
+    /* Hero Section */
+    .main-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1080px;
+      margin: 2.5em auto 1.5em auto;
+      padding: 2.5em 2em 1.5em 2em;
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 2em;
+      box-shadow: 0 2px 14px 2px #e6e3f6;
+    }
+    .hero-left {
+      flex: 1 1 350px;
+      min-width: 320px;
+      padding-right: 2em;
+    }
+    .hero-heading {
+      font-size: 2.4em;
+      font-weight: 700;
+      color: #18181b;
+      margin-bottom: 0.4em;
+      line-height: 1.1;
+    }
+    .hero-summary {
+      font-size: 1.09em;
+      max-width: 34em;
+      margin-bottom: 1.5em;
+      color: #424269;
+      line-height: 1.6;
+    }
+    .hero-action {
+      margin-bottom: 2em;
+    }
+    .hero-action a {
+      background: #161922;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 0.8em 2em;
+      font-size: 1.07em;
+      font-weight: 600;
+      box-shadow: 0 2px 8px 1px #d7ccfb;
+      text-decoration: none;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+    .hero-action a:hover {
+      background: #322a5d;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
+      margin-top: 1.5em;
+    }
+    .stat-card {
+      flex: 1 1 8em;
+      padding: 1.3em 1.6em;
+      background: #f3e7fd;
+      color: #322a5d;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      box-shadow: 0 1px 8px rgba(44, 36, 89, 0.07);
+    }
+    .stat-title {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .stat-desc {
+      font-size: 1em;
+      font-weight: 400;
+      color: #624784;
+      margin-top: 0.1em;
+    }
+    .hero-right {
+      flex: 1 1 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 260px;
+    }
+    .profile-card {
+      background: #fff;
+      width: 21em;
+      max-width: 100%;
+      border-radius: 25px;
+      box-shadow: 0 4px 18px 3px #dbeafb;
+      padding: 2em 1.6em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .profile-img {
+      width: 180px;
+      height: 220px;
+      border-radius: 17px;
+      object-fit: cover;
+      box-shadow: 0 3px 10px 2px #e3e3f7;
+    }
+
+    /* Project Cards */
     .project-card {
       background: #fff;
       border-radius: 20px;
       box-shadow: 0 2px 14px 0 #edeaf3;
       margin: 2em auto;
-      padding: 2em 2em 1.4em 2em;
+      padding: 2em;
       max-width: 800px;
       width: 100%;
     }
-    .project-card-header { display: flex; justify-content: space-between; align-items: flex-start; }
-    .project-title { font-size: 1.13em; font-weight: 700; color: #251251; }
-    .project-links a { color: #751ad1; margin-left: 2em; text-decoration: none; font-weight: 600; }
-    .project-links a:hover { text-decoration: underline; }
-    .project-meta { font-style: italic; color: #867a95; margin: 0.7em 0 0.8em 0; }
-    .project-desc { margin: 1em 0 1.1em 1.2em; color: #53505e; }
+    .project-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.6em;
+    }
+    .project-title {
+      font-size: 1.13em;
+      font-weight: 700;
+      color: #251251;
+    }
+    .project-links a {
+      color: #751ad1;
+      margin-left: 1.2em;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+    .project-meta {
+      font-style: italic;
+      color: #867a95;
+      margin: 0.7em 0 0.8em 0;
+    }
+    .project-desc {
+      margin: 1em 0 1.1em 1.2em;
+      color: #53505e;
+    }
     .project-img {
       width: 100%;
       aspect-ratio: 3 / 1;
@@ -39,92 +235,90 @@
       margin-top: 1.1em;
       cursor: pointer;
       transition: box-shadow 0.18s, transform 0.18s;
+      background: #eee;
       border: none;
       display: block;
-      background: #eee;
     }
-    .project-img:hover { box-shadow: 0 4px 24px #d0b3f6; transform: scale(1.018); }
+    .project-img:hover {
+      box-shadow: 0 4px 24px #d0b3f6;
+      transform: scale(1.018);
+    }
 
-
-    /* Navbar */
-    .navbar {
-      max-width:1200px;
-      margin:26px auto 0 auto;
-      background:#fff;
-      border-radius:1.5em;
-      box-shadow: 0 4px 24px 0px rgba(60,60,80,0.08);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 0.7em 2.5em;
-      font-family:'Inter',Arial,sans-serif;
-      position: sticky; top: 0; z-index: 10;
-    }
-    .navbar-logo { display: flex; align-items: center; gap: 0.7em; font-size: 1.16em; font-weight: 700; color: #322a5d; }
-    .logo-circle {
-      background: #8c37f8; color: #fff; border-radius: 50%;
-      width: 2.4em; height: 2.4em; display: flex; align-items: center; justify-content: center;
-      font-weight: bold; font-size: 1.35em;
-    }
-    .navbar-links { display: flex; gap: 2em; align-items: center; }
-    .navbar-links a {
-      color: #322a5d; text-decoration: none; font-weight: 500;
-      padding: 0.18em 0.7em; border-radius: 8px; transition: background 0.2s; cursor: pointer;
-    }
-    .navbar-links a:hover, .contact-btn:hover { background: #f3e7fd; }
-    .contact-btn {
-      background: #161922; color: #fff; border: none; padding: 0.7em 1.25em; border-radius: 13px;
-      font-weight: 600; font-size: 1em; cursor: pointer; margin-left: 0.5em;
-      box-shadow: 0 2px 7px rgba(172,62,248,0.13); transition: background 0.2s;
-    }
-    .contact-btn:hover { background: #3218c7; color: #ffcb46; }
-
-
-    /* Hero/Main */
-    .main-section {
-      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
-      max-width: 1080px; margin: 2.5em auto 1.5em auto; padding: 2.5em 2em 1.5em 2em;
-      background: rgba(255,255,255,.97); border-radius: 2em; box-shadow: 0 2px 14px 2px #e6e3f6;
-    }
-    .hero-left { flex: 1 1 350px; min-width: 320px; padding-right: 2em; }
-    .hero-heading { font-size: 2.4em; font-weight: 700; line-height: 1.12; margin-bottom: 0.36em; color: #18181b; }
-    .hero-summary { font-size: 1.09em; max-width: 34em; margin-bottom: 1.5em; color: #424269; line-height: 1.5; }
-    .hero-action { margin-bottom: 2em; }
-    .say-btn {
-      background: #8c37f8; color: #fff; border: none; border-radius: 10px; padding: 0.7em 1.45em; font-size: 1.07em;
-      font-weight: 600; cursor: pointer; box-shadow: 0 2px 8px 1px #d7ccfb; transition: background 0.2s;
-    }
-    .say-btn:hover { background: #322a5d; }
-    .hero-stats { display: flex; gap: 1.1em; margin-top: 1.7em; }
-    .stat-card {
-      flex: 1 1 8em; padding: 1.3em 1.6em; background: #f3e7fd; color: #322a5d; border-radius: 12px;
-      text-align: center; font-weight: 600; box-shadow: 0 1px 8px rgba(44,36,89,.07);
-    }
-    .stat-title { font-size: 1.5em; font-weight: bold; }
-    .stat-desc { font-size: 1em; font-weight: 400; color: #624784; margin-top: 0.1em; }
-    .hero-right { flex: 1 1 340px; display: flex; align-items: center; justify-content: center; min-width: 260px; }
-    .profile-card {
-      background: #fff; width: 21em; max-width: 100vw; border-radius: 25px;
-      box-shadow: 0 4px 18px 3px #dbeafb; padding: 2em 1.6em; display: flex; align-items: center; justify-content: center;
-    }
-    .profile-img { width: 180px; height: 220px; border-radius: 17px; object-fit: cover; box-shadow: 0 3px 10px 2px #e3e3f7; }
+    /* Chips and utility */
     .chip {
-      display:inline-block; padding:0.43em 1em; margin: 0 0.4em 0.45em 0; background:#f3f3f6; color:#323248;
-      border-radius: 1.1em; font-size:1em; font-weight:500; border:1px solid #efecf5;
+      display: inline-block;
+      padding: 0.43em 1em;
+      margin: 0 0.4em 0.45em 0;
+      background: #f3f3f6;
+      color: #323248;
+      border-radius: 1.1em;
+      font-size: 1em;
+      font-weight: 500;
+      border: 1px solid #efecf5;
     }
-    @media(max-width:900px){ .main-section{flex-direction:column;gap:3em;} .hero-left{padding:0;} }
-    @media(max-width:600px){
-      .main-section{padding:1.1em;}
-      .profile-card{width:95vw;}
-      .hero-heading{font-size:1.28em;}
-      .stat-card{padding:0.8em 0.8em;}
-      .navbar{padding:0.65em 1em;}
+
+    /* 📱 Responsive Design */
+    @media (max-width: 900px) {
+      .main-section {
+        flex-direction: column;
+        gap: 2.5em;
+        padding: 1.8em 1.2em;
+      }
+      .hero-left {
+        padding: 0;
+      }
+      .hero-heading {
+        font-size: 1.9em;
+      }
+      .hero-summary {
+        font-size: 1em;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.8em 1.2em;
+      }
+      .navbar-links {
+        flex-wrap: wrap;
+        gap: 1em;
+        margin-top: 0.6em;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-heading {
+        font-size: 1.5em;
+        text-align: center;
+      }
+      .hero-summary {
+        text-align: center;
+      }
+      .hero-action {
+        text-align: center;
+      }
+      .hero-stats {
+        justify-content: center;
+      }
+      .profile-card {
+        width: 90%;
+      }
+      .navbar {
+        padding: 0.65em 1em;
+      }
+      .project-card {
+        padding: 1.4em;
+      }
+      .project-title {
+        font-size: 1.05em;
+      }
+      .project-img {
+        aspect-ratio: 2.3 / 1;
+      }
     }
   </style>
 </head>
+
 <body>
-
-
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-logo">
@@ -137,28 +331,28 @@
       <a href="#education">Education</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
-      <button class="contact-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact Me</button>
+      <button class="contact-btn" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
+        Contact Me
+      </button>
     </div>
   </nav>
-
 
   <!-- Home Section -->
   <section id="home">
     <div class="main-section">
       <div class="hero-left">
-        <div class="hero-heading"><br>Sneh Patel</div>
+        <div class="hero-heading">Sneh Patel</div>
         <div class="hero-summary">
-          I'm a Computer Science and Engineering Final year student specializing in Information Security at VIT,Vellore.<br>
-          Aspiring programmer and Software Developer.
-          <br>
-          <a href="https://github.com/sneh2401" target="_blank" style="color:#8c37f8;text-decoration:underline;font-weight:bold;">GitHub</a> &nbsp;•&nbsp;
-          <a href="https://linkedin.com/in/snehpatel9" target="_blank" style="color:#8c37f8;text-decoration:underline;font-weight:bold;">LinkedIn</a> &nbsp;•&nbsp; 
+          I'm a final-year Computer Science and Engineering student specializing in Information Security at VIT Vellore.<br />
+          Aspiring programmer and Software Developer.<br />
+          <a href="https://github.com/sneh2401" target="_blank" style="color:#8c37f8;text-decoration:underline;font-weight:bold;">GitHub</a>
+          &nbsp;•&nbsp;
+          <a href="https://linkedin.com/in/snehpatel9" target="_blank" style="color:#8c37f8;text-decoration:underline;font-weight:bold;">LinkedIn</a>
+          &nbsp;•&nbsp;
           <a href="https://leetcode.com/u/Snehpatel2401/" target="_blank" style="color:#8c37f8;text-decoration:underline;font-weight:bold;">LeetCode</a>
         </div>
         <div class="hero-action">
-          <a href="original_resume.pdf" download style="display:inline-block;background:#161922;color:#fff;border:none;border-radius:10px;padding:0.8em 2em;font-size:1.07em;font-weight:600;box-shadow:0 2px 8px 1px #d7ccfb;transition:background 0.2s;text-decoration:none;">
-            &#8681; Download CV
-          </a>
+          <a href="original_resume.pdf" download>&#8681; Download CV</a>
         </div>
         <div class="hero-stats">
           <div class="stat-card">
@@ -171,7 +365,6 @@
           </div>
           <div class="stat-card">
             <div class="stat-title">Strong Skillset</div>
-            <div class="stat-desc"></div>
           </div>
         </div>
       </div>
@@ -182,7 +375,6 @@
       </div>
     </div>
   </section>
-
 
   <!-- Profile Section -->
   <section id="profile">
